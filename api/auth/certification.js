@@ -25,6 +25,7 @@ module.exports = async (req, res) => {
         sms.set_us_phone_number(us_phone_number);
         
         let send_verify = sms.send_sms();
+        console.log(send_verify)
         if (send_verify){
             
             console.log('number sended!#################')
