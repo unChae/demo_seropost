@@ -33,11 +33,22 @@
     - 최대한 변수 선언은 let, 상수일 경우 const, 전역변수 활용일 경우에 let대신 var
     - }else{ else 앞뒤로 {} 붙여주기
 
-##### 2020.09.05 written by deok
+##### 2020.10.14 written by deok
 
 - 코드 정리
     - demo smol login 이식
     - SMS 인증 aligoapi 구현
     - .env aligoapi table 추가
 
+##### 2020.10.15 written by deok
 
+- 서버 Recovery
+    - Routes, utils 복원
+- 코드 정리
+    - models Offline에 of_us_id 추가
+    - models index.js Offline 테이블 수정
+    - get_received_post, get_sended_post api 추가(정상작동확인)
+
+- 해야 할 것들
+    - get_sended_post에 offline include 시키기
+    - Aligoapi 검증

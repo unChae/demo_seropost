@@ -1,6 +1,6 @@
 // models
 const model = require("../../models");
-const User = model.Post;
+const Post = model.Post;
 
 // utils
 const response = require("../utils/response");
