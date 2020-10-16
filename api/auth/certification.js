@@ -15,30 +15,27 @@ module.exports = async (req, res) => {
     })
     .catch((err) => {
         console.log(err);
-        response(res, 409, "[certification] 데이터베이스 오류 발생.", null);
-    })
+        response(res, 200, "[certification] 데이터베이스 오류 발생.", null);
+    });
 
     if (user){
-        response(res, 409, "[certification] 이미 등록된 사용자.", null);
-    }else{
-        console.log(us_phone_number)
+        response(res, 200, "[certification] 이미 등록된 사용자.", null);
+    }
+    else{
         sms.set_us_phone_number(us_phone_number);
         
         let send_verify = sms.send_sms();
-        console.log(send_verify)
+        console.log(send_verify);
+        
         if (send_verify){
-            
-            console.log('number sended!#################')
-            
+            console.log('number sended!#################');
             req.session.number = sms.get_number();
-            console.log(req.session)
-            
+            console.log(req.session);
             response(res, 200, "[certification] 인증번호 발송 완료.", null);
         }
         else {
             response(res, 200, "[certification] 인증번호 발송 실패.", null);
         }
     }
-    
 };
     

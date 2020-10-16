@@ -14,9 +14,9 @@ module.exports = async (req,res) => {
             });
             response(res, 200, "[number_certification] 인증 완료.", null);
         }else{
-            response(res, 409, "[number_certification] 인증번호가 틀림.", null);
+            response(res, 200, "[number_certification] 인증번호가 틀림.", null);
         }
     }else{
-        response(res, 409, "[number_certification] 인증번호 만료.", null);
+        response(res, 200, "[number_certification] 인증번호 만료.", null);
     }
 };

@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         }, 
         po_us_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         po_photo: {

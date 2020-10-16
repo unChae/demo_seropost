@@ -6,11 +6,11 @@ const Post = model.Post;
 const response = require("../utils/response");
 
 module.exports = async (req, res) =>{
-    let {us_id} = req.body;
+    let {us_social_id} = req.body;
     
     try{
         let post = await Post.findAll({
-            where : {po_us_id : us_id}
+            where : {po_us_id : us_social_id}
         })
         .catch((err) => {
             console.log("[get_post_data] 데이터 베이스 오류 발생");

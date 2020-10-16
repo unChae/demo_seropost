@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => { 
     let model = sequelize.define('Address', { 
         ad_us_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         ad_name: {
