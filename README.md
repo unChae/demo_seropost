@@ -71,7 +71,7 @@
     - get_sended_post에서 offline 정보 안에 post 데이터 함께 반환  
      
 - Git 관리
-    - igonore 파일 생성
+    - ignore 파일 생성
     - .env, config.json 제외
 
 - 해야 할 것들
