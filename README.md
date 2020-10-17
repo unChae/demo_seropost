@@ -77,3 +77,15 @@
 - 해야 할 것들
     - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요
     - Aligoapi 검증
+
+
+
+##### 2020.10.17 written by deok
+
+- 라우터 추가
+    - 고객 문의와 관련된 라우터 quest 추가
+    - question, questioncategory DB 생성 api 추가
+     
+- 해야 할 것들
+    - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요
+    - Aligoapi 검증

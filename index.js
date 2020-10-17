@@ -76,6 +76,9 @@ app.use('/post', postRouter);
 const infoRouter = require('./routes/info')(router);
 app.use('/info', postRouter);
 
+const questRouter = require('./routes/quest')(router);
+app.use('/quest', questRouter);
+
 app.get("/", (req, res) => {
     let response_data = {
         status:200,
