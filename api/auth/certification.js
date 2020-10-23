@@ -23,14 +23,9 @@ module.exports = async (req, res) => {
     }
     else{
         sms.set_us_phone_number(us_phone_number);
-        
-        let send_verify = sms.send_sms();
-        console.log(send_verify);
-        
+        let send_verify = await sms.send_sms();
         if (send_verify){
-            console.log('number sended!#################');
             req.session.number = sms.get_number();
-            console.log(req.session);
             response(res, 200, "[certification] 인증번호 발송 완료.", null);
         }
         else {

@@ -1,23 +1,20 @@
 // aligoapi 호출
 const aligoapi = require('aligoapi');
-const axios = require("axios");
+// aixos 호출
+const axios = require('axios');
 
-var AuthData = {
-    key: process.env.ALIGOAPI_KEY,
-    // 이곳에 발급받으신 api key를 입력하세요
-    user_id: process.env.ALIGOAPI_USER_ID,
-    // 이곳에 userid를 입력하세요
-}
 // random 숫자 생성
 const random = require("./random");
 
 var number = null;
 var aligo_msg = {
-    
+    key : process.env.ALIGOAPI_KEY,
+    user_id : process.env.ALIGOAPI_USER_ID,
     sender : process.env.ALIGOAPI_SENDER,
     receiver :'',
     msg : '',
 };
+
 
 module.exports = {
     set_us_phone_number: (us_phone_number) => {
@@ -29,17 +26,22 @@ module.exports = {
         console.log(aligo_msg);
 
     },
+    
     send_sms: () => {
         
-        aligoapi.send(aligo_msg, AuthData)
-        .then((result) => {
-            console.log(result)
-            return true;            
-        })
-        .catch((err) => {
+        axios.post('https://apis.aligo.in/send/', null, {
+            params : {
+                key : aligo_msg.key,
+                user_id : aligo_msg.user_id,
+                sender : aligo_msg.sender,
+                receiver : aligo_msg.receiver,
+                msg : aligo_msg.msg
+            }
+        }).catch((err) => {
             console.log(err)
             return false;
-        })        
+        })
+        return true;
     },
 
     get_number: () => {

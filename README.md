@@ -89,3 +89,18 @@
 - 해야 할 것들
     - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요
     - Aligoapi 검증
+
+
+
+##### 2020.10.17 written by deok
+
+- 코드 수정
+    - auth/certification aligoapi 사용 가능
+    - get_sended_post include로 User 포함
+    - get_categoty_data 유저 아이디 받아서 모든 연관된 question 반환
+    - Address에 ad_id primaryKey 추가
+    - del_address, get_address, update_address api 추가
+    - update_user api 추가
+     
+- 해야 할 것들
+    - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요

@@ -1,2 +1,3 @@
-exports.set_quest_data = require("./set_quest_data");
-exports.set_quest_category = require("./set_quest_category");
+exports.set_data = require("./set_data");
+exports.get_data = require("./get_data");
+exports.get_category_data = require("./get_category_data");

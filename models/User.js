@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         us_phone_number: { 
             type: DataTypes.STRING(20), 
-            allowNull: false
+            allowNull: false,
+            unique: true
         }, 
         us_name: {
             type: DataTypes.STRING(100),

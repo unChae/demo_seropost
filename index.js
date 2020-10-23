@@ -76,8 +76,8 @@ app.use('/post', postRouter);
 const infoRouter = require('./routes/info')(router);
 app.use('/info', postRouter);
 
-const questRouter = require('./routes/quest')(router);
-app.use('/quest', questRouter);
+const questionRouter = require('./routes/question')(router);
+app.use('/question', questionRouter);
 
 app.get("/", (req, res) => {
     let response_data = {

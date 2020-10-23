@@ -13,6 +13,12 @@ module.exports = (router) => {
     
     // 회원가입
     router.post('/set_user_data', api.set_user_data);
+    
+    // 회원정보 수정
+    router.post('/update_user', api.update_user);
+    
+    // test
+    router.post('/test', api.test);
 
     return router;
 };

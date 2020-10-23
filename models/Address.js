@@ -1,5 +1,11 @@
 module.exports = (sequelize, DataTypes) => { 
-    let model = sequelize.define('Address', { 
+    let model = sequelize.define('Address', {
+        ad_id : {
+            type: DataTypes.INTEGER,
+            allowNull: false, 
+            primaryKey: true,
+            autoIncrement: true
+        },
         ad_us_id: {
             type: DataTypes.STRING(100),
             allowNull: false
@@ -18,9 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     },{ 
         timestamps: false
-    }); 
-    
-    model.removeAttribute('id');
+    });
     
     return model;
 }

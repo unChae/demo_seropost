@@ -4,11 +4,14 @@ const Post = model.Post;
 
 // utils
 const response = require("../utils/response");
+const image = require("../utils/image");
 
 module.exports = async (req, res) => {
     let {us_social_id, po_photo, po_content} = req.body;
     
-    // po_photo를 s3에저장
+    console.log(po_photo)
+    await image.set_base64(po_photo);
+    po_photo = await image.s3_upload()// po_photo를 s3에저장
     // let s3_url =null;
     // 저장된 s3 주소를 DB에 저장
     
