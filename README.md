@@ -92,7 +92,7 @@
 
 
 
-##### 2020.10.17 written by deok
+##### 2020.10.23 written by deok
 
 - 코드 수정
     - auth/certification aligoapi 사용 가능
@@ -104,3 +104,15 @@
      
 - 해야 할 것들
     - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요
+
+
+
+##### 2020.10.24 written by deok
+
+- 코드 수정
+    - util/image aws s3에 파일 저장 코드 수정
+    - set_post_data에서 이미지는 s3의 주소값으로 수정
+     
+- 해야 할 것들
+    - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요
+

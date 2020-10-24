@@ -26,24 +26,52 @@ module.exports = {
     },
     
     //이미지 파일을 s3에 저장
-    s3_upload: async () => {
-        let buffer = Buffer.from(base64.replace(/^data:image\/\w+;base64,/, ""),'base64')
-        let new_url=''
-        let param = {
-            'Bucket': process.env.AWS_S3_BUCKET,
-            'Key': 'image/' + 'testlasdaogo.png',
-            'ACL': 'public-read',
-            'Body': buffer,
-            'ContentEncoding': 'base64',
-            'ContentType': 'image/jpeg'
-        }
-        await s3.upload(param, function(err, data){
-            if(err) {
-                console.log(err);
+    s3_upload: async (us_social_id, po_id) => {
+        return new Promise(function(resolve, reject){
+            let buffer = Buffer.from(base64.replace(/^data:image\/\w+;base64,/, ""),'base64')
+            let param = {
+                'Bucket': process.env.AWS_S3_BUCKET,
+                'Key': us_social_id + '/post/' + po_id + '_post.png',
+                'ACL': 'public-read',
+                'Body': buffer,
+                'ContentEncoding': 'base64',
+                'ContentType': 'image/jpeg'
             }
-            new_url = String(data.Location)
-            console.log('image_url : ' + new_url)
-            console.log(data);
+            s3.upload(param, function(err, data){
+                if(err) {
+                    console.log(err);
+                    reject(new Error('Request error'))
+                }
+                console.log(data.Location)
+                resolve(data.Location)
+            })
+            
         })
+        
     }
+    //base 64를 s3에 저장하고 url 반환
+    // s3_upload: async (base64, us_social_id, po_id) => {
+    //     return new Promise(function(resolve, reject){
+    //         let buffer = Buffer.from(base64.replace(/^data:image\/\w+;base64,/, ""),'base64')
+    //         let new_url=''
+    //         let param = {
+    //             'Bucket': process.env.AWS_S3_BUCKET,
+    //             'Key': us_social_id + '/post/' + po_id + '_post.png',
+    //             'ACL': 'public-read',
+    //             'Body': buffer,
+    //             'ContentEncoding': 'base64',
+    //             'ContentType': 'image/jpeg'
+    //         }
+    //         s3.upload(param, function(err, data){
+    //             if(err) {
+    //                 console.log(err);
+    //                 reject(new Error('Request error'))
+    //             }
+    //             console.log(data.Location);
+    //             resolve(data.Location)
+    //         })
+            
+    //     })
+        
+    // }
 }
