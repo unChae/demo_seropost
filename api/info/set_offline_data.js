@@ -9,6 +9,7 @@ module.exports = async (req,res) => {
     let {us_social_id, po_id, of_name, of_address, of_address_detail, of_status} = req.body;
     
     let offline = await Offline.create({
+        raw : true,
         of_po_id : po_id,
         of_us_id : us_social_id,
         of_name,

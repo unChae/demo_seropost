@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
     let {us_phone_number} = req.body;
     
     let user = await User.findOne({
-        raw: true,
+        raw : true,
         where: {us_phone_number}
     })
     .catch((err) => {
@@ -26,7 +26,10 @@ module.exports = async (req, res) => {
         let send_verify = await sms.send_sms();
         if (send_verify){
             req.session.number = sms.get_number();
-            response(res, 200, "[certification] 인증번호 발송 완료.", null);
+            req.session.save(function (){
+                console.log(req.session)
+                response(res, 200, "[certification] 인증번호 발송 완료.", true);
+            })
         }
         else {
             response(res, 200, "[certification] 인증번호 발송 실패.", null);

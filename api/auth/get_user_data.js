@@ -10,6 +10,7 @@ module.exports = async (req,res) => {
 
     try{
         let user = await User.findOne({
+            raw:true,
             where: {us_social_id}
         })
         .catch((err) => {

@@ -9,6 +9,7 @@ module.exports = async (req,res) => {
     let {us_social_id, qu_qc_id, qu_content, qu_parent_id} = req.body;
 
     let question = await Question.create({
+        raw : true,
         qu_us_id : us_social_id,
         qu_qc_id,
         qu_content,

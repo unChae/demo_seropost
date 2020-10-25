@@ -10,6 +10,7 @@ module.exports = async (req, res) =>{
     
     try{
         let post = await Post.findAll({
+            raw : true,
             where : {po_us_id : us_social_id}
         })
         .catch((err) => {

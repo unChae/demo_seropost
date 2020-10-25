@@ -9,6 +9,7 @@ module.exports = async (req,res) => {
     let {us_social_id, ad_name, ad_address, ad_address_detail} = req.body;
     
     let address = await Address.create({
+        raw : true,
         ad_us_id : us_social_id,
         ad_name,
         ad_address,

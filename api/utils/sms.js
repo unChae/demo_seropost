@@ -13,6 +13,7 @@ var aligo_msg = {
     sender : process.env.ALIGOAPI_SENDER,
     receiver :'',
     msg : '',
+    // testmode_yn	: 'Y'
 };
 
 

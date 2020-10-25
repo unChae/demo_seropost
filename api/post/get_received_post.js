@@ -11,6 +11,7 @@ module.exports = async (req, res) =>{
     
     try{
         let online_post = await Online.findAll({
+            raw : true,
             where : {on_us_id : us_social_id}
         })
         .catch((err) => {
@@ -21,6 +22,7 @@ module.exports = async (req, res) =>{
         let received_post = [];
         for( var post in online_post){
             received_post += await Post.findOne({
+                raw : true,
                 where : { po_id: post.on_po_id }
             })
             .catch((err) => {

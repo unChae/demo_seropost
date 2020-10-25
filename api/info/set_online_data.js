@@ -9,6 +9,7 @@ module.exports = async (req,res) => {
     let {us_social_id, po_id} = req.body;
     
     let online = await Online.create({
+        raw : true,
         on_po_id : po_id,
         on_us_id : us_social_id
     })

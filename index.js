@@ -1,6 +1,7 @@
 /* 모듈 호출 */
 const express = require('express');
 const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 
 const app = express();
 const cors = require('cors');
@@ -57,11 +58,12 @@ require('dotenv').config();
 //expression
 app.use(session({
 	secret: 'seropost123',
-	resave:true,
+	resave : false,
 	saveUninitialized : true,
-	cookie : {
-		maxAge : 1000*60*3
-	}
+	cookie :{
+		maxAge : 1000*60*3	
+	},
+	store : new FileStore()
 }));
 
 // 라우팅
