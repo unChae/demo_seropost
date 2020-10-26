@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         po_photo: {
             type: DataTypes.STRING(255),
-            allowNull: false
+            allowNull: true
         },
         po_content: {
             type: DataTypes.TEXT,

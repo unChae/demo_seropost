@@ -127,3 +127,13 @@
 - 해야 할 것들
     - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요
 
+
+
+##### 2020.10.26 written by deok
+
+- 코드 수정
+    - s3upload util생성 : form-data에서 file명에 따라 s3에 저장
+    - set_post_data에서 s3에저장된 이미지 주소값으로 DB저장
+     
+- 해야 할 것들
+    - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요
