@@ -63,7 +63,7 @@ app.use(session({
 	cookie :{
 		maxAge : 1000*60*3	
 	},
-	store : new FileStore()
+	// store : new FileStore()
 }));
 
 // 라우팅

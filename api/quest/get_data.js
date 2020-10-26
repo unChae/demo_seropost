@@ -28,7 +28,7 @@ module.exports = async (req,res) => {
     for(var idx in question){
         question[idx].question = await Question.findAll({
             raw : true,
-            where : {qu_parent_id : question[idx].qu_parent_id},
+            where : {qu_parent_id : question[idx].qu_id},
             include : [{
                 model : User,
                 attributes : [ 'us_name', 'us_photo' ]

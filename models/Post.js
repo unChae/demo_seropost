@@ -17,7 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         po_content: {
             type: DataTypes.TEXT,
             allowNull: false
-        }
+        },
+        po_content_photo: {
+            type: DataTypes.STRING(255),
+            allowNull: true
+        },
     },{ 
         updatedAt: false,
         timestamps:true
