@@ -7,7 +7,7 @@ const response = require("../utils/response");
 
 module.exports = async (req,res) => {
     let category = await Category.findAll({
-        raw : true
+        raw : true,
     })
     .catch((err) => {
         console.log('[get_category_data] DB 오류')

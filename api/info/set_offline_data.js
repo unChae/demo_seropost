@@ -6,7 +6,7 @@ const Offline = model.Offline;
 const response = require("../utils/response");
 
 module.exports = async (req,res) => {
-    let {us_social_id, po_id, of_name, of_address, of_address_detail, of_status} = req.body;
+    let {us_social_id, po_id, of_name, of_address, of_address_detail} = req.body;
     
     let offline = await Offline.create({
         raw : true,
@@ -15,7 +15,6 @@ module.exports = async (req,res) => {
         of_name,
         of_address,
         of_address_detail,
-        of_status
     })
     .catch((err) => {
         console.log('[set_offline_data] DB 등록 오류')

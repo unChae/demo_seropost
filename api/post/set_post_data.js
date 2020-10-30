@@ -1,7 +1,7 @@
 // models
 const model = require("../../models");
 const Post = model.Post;
-
+const moment=require("moment");
 // utils
 const response = require("../utils/response");
 
@@ -9,6 +9,8 @@ module.exports = async (req, res) => {
     let {us_social_id, po_content} = req.body;
     let po_photo = req.files.po_photo[0].location
     let po_content_photo = req.files.po_content_photo[0].location
+    let date = moment().format('YYYYMMDDHHmmss');
+    console.log(date)
     
     let post = await Post.create({
         raw : true,
@@ -16,6 +18,7 @@ module.exports = async (req, res) => {
         po_content,
         po_photo,
         po_content_photo,
+        createAt : date
     })
     .catch((err) => {
         console.log("[set_post_data] DB 등록 실패");

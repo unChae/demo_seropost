@@ -137,3 +137,23 @@
      
 - 해야 할 것들
     - get_sended_post와 ge_post_data는 작성한 엽서함과 결재내역 / 세로전송 기능에따라 합치거나 삭제할 필요
+
+
+
+##### 2020.10.28 written by deok
+
+- 코드 수정
+    - get_phone_user : us_phone_number로 user데이터 반환 api 추가
+    - address 테이블에 ad_number(주소번호) 추가
+    - del_quest api 추가
+    - set_addres_data : DB생성시 ad_name이 중복되지 않게 생성되도록 수정
+    - get_received_post : post받은 순으로 반환(post index로 post정보 include)
+    - 출력되게 반환get_phone_user : us_phone_number로 user데이터 반환 api 추가
+    - get_post_count : 받은, 보낸 post 갯수 반환     
+
+- 해야 할 것들
+    - 회원 탈퇴 기능
+    - post에 record column 추가
+    - 문자 테스트
+    - 이미지 썸네일을 위한 resized image 출력 
+    - 

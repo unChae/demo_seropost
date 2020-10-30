@@ -11,7 +11,8 @@ module.exports = async (req, res) =>{
     try{
         let post = await Post.findAll({
             raw : true,
-            where : {po_us_id : us_social_id}
+            where : {po_us_id : us_social_id},
+            order: [['createdAt','DESC']]
         })
         .catch((err) => {
             console.log("[get_post_data] 데이터 베이스 오류 발생");

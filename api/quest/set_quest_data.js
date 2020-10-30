@@ -16,9 +16,9 @@ module.exports = async (req,res) => {
         qu_parent_id,
     })
     .catch((err) => {
-        console.log('[set_data] DB 등록 오류')
-        response(res, 200, '[set_data] DB 등록 오류', err)
+        console.log('[set_quest_data] DB 등록 오류')
+        response(res, 200, '[set_quest_data] DB 등록 오류', err)
     });
 
-    response(res, 200, "[set_data] DB question 등록 완료.", question);
+    response(res, 200, "[set_quest_data] DB question 등록 완료.", question);
 };

@@ -16,10 +16,14 @@ module.exports = (sequelize, DataTypes) => {
         },
         ad_address: {
             type: DataTypes.STRING(255),
-            allowNull: false
+            allowNull: false,
         },
         ad_address_detail: {
             type: DataTypes.TEXT,
+            allowNull: false
+        },
+        ad_number: {
+            type: DataTypes.STRING(100),
             allowNull: false
         }
     },{ 

@@ -11,8 +11,8 @@ module.exports = (router) => {
     // 받은 Post 데이터 반환
     router.post('/get_received_post', api.get_received_post);
     
-    // 보낸 Post 데이터 반환
-    router.post('/get_sended_post', api.get_sended_post);
+    // 보낸 Post, 받은 post 갯수 반환
+    router.post('/get_post_count', api.get_post_count);
 
     return router;
 };

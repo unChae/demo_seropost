@@ -18,11 +18,12 @@ module.exports = async (req,res) => {
         },
         include : [{
              model : Category,
-        }]
+        }],
+        order: [['createdAt','DESC']]
     })
     .catch((err) => {
-        console.log('[get_data] DB 반환 오류')
-        response(res, 200, '[get_data] DB 반환 오류', err)
+        console.log('[get_quest_data] DB 반환 오류')
+        response(res, 200, '[get_quest_data] DB 반환 오류', err)
     });
     
     for(var idx in question){
@@ -32,15 +33,16 @@ module.exports = async (req,res) => {
             include : [{
                 model : User,
                 attributes : [ 'us_name', 'us_photo' ]
-            }]
+            }],
+            order: [['createdAt','DESC']]
         })
         .catch((err) => {
-            console.log("[get_data]  DB 반환 오류");
-            response(res, 200, "[get_data] DB 반환 오류 발생", err);
+            console.log("[get_quest_data]  DB 반환 오류");
+            response(res, 200, "[get_quest_data] DB 반환 오류 발생", err);
         });
     }
     
     console.log(question);
-    response(res, 200, "[get_data] DB 데이터 반환 완료", question);
+    response(res, 200, "[get_quest_data] DB 데이터 반환 완료", question);
     
 };
