@@ -18,10 +18,8 @@ db.User = require('./User')(sequelize, Sequelize);
 
 db.Address.belongsTo(db.User, {foreignKey: 'ad_us_id', targetKey: 'us_social_id'});
 
-db.Offline.belongsTo(db.Post, {foreignKey: 'of_po_id', targetKey: 'po_id'});
 db.Offline.belongsTo(db.User, {foreignKey: 'of_us_id', targetKey: 'us_social_id'});
 
-db.Online.belongsTo(db.Post, {foreignKey: 'on_po_id', targetKey: 'po_id'});
 db.Online.belongsTo(db.User, {foreignKey: 'on_us_id', targetKey: 'us_social_id'});
 
 db.Post.belongsTo(db.User, {foreignKey: 'po_us_id', targetKey: 'us_social_id'});

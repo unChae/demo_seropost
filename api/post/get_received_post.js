@@ -21,7 +21,6 @@ module.exports = async (req, res) =>{
         });
         
         for( var post of online_post){
-            console.log(post)
             post.post = await Post.findOne({
                 raw : true,
                 where : { po_id: post.on_po_id }
@@ -31,7 +30,8 @@ module.exports = async (req, res) =>{
                 response(res, 200, "[get_received_post] DB 반환 오류", err);
             });
         }
-        console.log(online_post);    
+        // console.log(online_post);    
+        console.log('get_received_post');    
         response(res, 200,"[get_received_post] Post 데이터 반환 완료", online_post)
 
     }catch(err){

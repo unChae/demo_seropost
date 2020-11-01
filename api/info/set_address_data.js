@@ -6,7 +6,7 @@ const Address = model.Address;
 const response = require("../utils/response");
 
 module.exports = async (req,res) => {
-    let {us_social_id, ad_name, ad_address, ad_address_detail, ad_number} = req.body;
+    let {us_social_id, ad_name, ad_address, ad_address_detail, ad_address_number} = req.body;
     
     let check_address_name = await Address.findOne({
         raw: true,
@@ -28,12 +28,13 @@ module.exports = async (req,res) => {
             ad_name,
             ad_address,
             ad_address_detail,
-            ad_number
+            ad_address_number
         })
         .catch((err) => {
             console.log('[set_address_data] DB 등록 오류')
             response(res, 200, '[set_address_data] DB 등록 오류', err)
         });
+        console.log('set_address_data')
         response(res, 200, "[set_address_data] DB address 등록 완료.", address);
     }
 };

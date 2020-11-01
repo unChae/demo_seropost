@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        ad_number: {
+        ad_address_number: {
             type: DataTypes.STRING(100),
             allowNull: false
         }

@@ -16,6 +16,6 @@ module.exports = async (req,res) => {
         console.log('[del_address] DB 오류')
         response(res, 200, '[del_address] DB 오류', err)
     });
-
+    console.log('del_address')
     response(res, 200, "[del_address] DB 삭제 완료.", address);
 };

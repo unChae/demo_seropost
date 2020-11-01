@@ -12,13 +12,17 @@ module.exports = (sequelize, DataTypes) => {
         },
         po_photo: {
             type: DataTypes.STRING(255),
-            allowNull: true
+            allowNull: false
         },
         po_content: {
             type: DataTypes.TEXT,
             allowNull: false
         },
         po_content_photo: {
+            type: DataTypes.STRING(255),
+            allowNull: false
+        },
+        po_record: {
             type: DataTypes.STRING(255),
             allowNull: true
         },

@@ -18,7 +18,7 @@ module.exports = async (req, res) =>{
             console.log("[get_post_data] 데이터 베이스 오류 발생");
             response(res, 200, "[get_post_dat] 데이터베이스 오류 발생", err);
         });
-        console.log(post);    
+        console.log('get_post_data')
         response(res, 200,"[get_post_data] Post 데이터 반환 완료", post)
 
     }catch(err){

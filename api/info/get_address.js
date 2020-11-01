@@ -16,6 +16,6 @@ module.exports = async (req,res) => {
         console.log('[get_address] DB 오류')
         response(res, 200, '[get_address] DB 오류', err)
     });
-
+    console.log('get_address')
     response(res, 200, "[get_address] DB 반환 완료.", address);
 };

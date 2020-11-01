@@ -19,6 +19,6 @@ module.exports = async (req,res) => {
         console.log('[update_user] DB 오류')
         response(res, 200, '[update_user] DB 오류', err)
     });
-
+    console.log('update_user')
     response(res, 200, "[update_user] DB 변경 완료.", user);
 };

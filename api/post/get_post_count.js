@@ -35,7 +35,7 @@ module.exports = async (req, res) =>{
     });
     post_number.received_post=Object.keys(received_post).length
     
-    console.log(post_number)
+    console.log('get_post_count')
     response(res, 200,"[get_sended_post] DB 데이터 반환 완료", post_number);
 
 };

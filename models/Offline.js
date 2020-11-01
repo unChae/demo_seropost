@@ -2,7 +2,8 @@ module.exports = (sequelize, DataTypes) => {
     let model = sequelize.define('Offline', { 
         of_po_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            unique: true,
         },
         of_us_id: {
             type: DataTypes.STRING(100),
@@ -18,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         of_address_detail: {
             type: DataTypes.STRING(255),
+            allowNull: false
+        },
+        of_address_number: {
+            type: DataTypes.STRING(100),
             allowNull: false
         },
         of_status: {

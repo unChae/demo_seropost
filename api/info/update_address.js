@@ -18,6 +18,6 @@ module.exports = async (req,res) => {
         console.log('[update_address] DB 오류')
         response(res, 200, '[update_address] DB 오류', err)
     });
-
+    console.log('update_address')
     response(res, 200, "[update_address] DB 변경 완료.", address);
 };

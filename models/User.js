@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,  
             allowNull: false
         },
+        us_address_number: {
+            type: DataTypes.STRING(100),  
+            allowNull: false
+        },
         us_alarm: {
             type: DataTypes.INTEGER,
             defaultValue: 0,

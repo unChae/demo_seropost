@@ -13,6 +13,6 @@ module.exports = async (req,res) => {
         console.log('[get_category_data] DB 오류')
         response(res, 200, '[get_category_data] DB 오류', err)
     });
-
+    console.log('get_category_data')
     response(res, 200, "[get_category_data] DB question category 반환 완료.", category);
 };

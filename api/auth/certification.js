@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
         if (send_verify){
             req.session.number = sms.get_number();
             req.session.save(function (){
-                console.log(req.session)
+                console.log('certification : sms sended')
                 response(res, 200, "[certification] 인증번호 발송 완료.", true);
             })
         }

@@ -19,6 +19,6 @@ module.exports = async (req,res) => {
         console.log('[set_quest_data] DB 등록 오류')
         response(res, 200, '[set_quest_data] DB 등록 오류', err)
     });
-
+    console.log('set_quest_data')
     response(res, 200, "[set_quest_data] DB question 등록 완료.", question);
 };

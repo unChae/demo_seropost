@@ -132,7 +132,7 @@
 ##### 2020.10.26 written by deok
 
 - 코드 수정
-    - s3upload util생성 : form-data에서 file명에 따라 s3에 저장
+    - s3upload util생성(multer사용) : form-data에서 file명에 따라 s3에 저장
     - set_post_data에서 s3에저장된 이미지 주소값으로 DB저장
      
 - 해야 할 것들
@@ -156,4 +156,35 @@
     - post에 record column 추가
     - 문자 테스트
     - 이미지 썸네일을 위한 resized image 출력 
-    - 
+    
+
+
+##### 2020.10.31 written by deok
+
+- 코드 수정
+    - Post에 po_record 추가
+    - set_post_data 에서 po_record url 저장, s3에 음성파일 저장(multer사용)
+
+- 해야 할 것들
+    - 회원 탈퇴 기능
+    - 문자 테스트
+    - 이미지 썸네일을 위한 resized image 출력 
+    
+
+
+##### 2020.11.1 written by deok
+
+- 코드 수정
+    - get_offline_dat api 추가(us_social_id, po_id 입력받음
+    - del_post_data : po_id입력받아 관련된 Offline, Online, Post db 삭제
+    - User 테이블에 us_address_number 추가
+    - Offline 테이블에 of_received(수신여부, def 0, of_address_number 추가, 수신한 날과 수신 수락한 날 테이블 수정
+    - online, offline에 po_id 외래키 삭제, unique로 설정
+    - del)user_data : us_social_id와 관련된 db 전부 삭제
+
+- 해야 할 것들
+    - 회원 탈퇴 기능
+    - 문자 테스트
+    - 이미지 썸네일을 위한 resized image 출력 
+    - fcm 알람 보내기 기능 구현
+    - 문자대신 카카오로 주소입력

@@ -17,6 +17,6 @@ module.exports = async (req,res) => {
         console.log('[set_online_data] DB 등록 오류')
         response(res, 200, '[set_online_data] DB 등록 오류', err)
     });
-
+    console.log('set_online_data')
     response(res, 200, "[set_online_data] DB user 등록 완료.", online);
 };

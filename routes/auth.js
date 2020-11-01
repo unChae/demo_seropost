@@ -19,6 +19,9 @@ module.exports = (router) => {
     
     // 회원정보 수정
     router.post('/update_user', api.update_user);
+    
+    // 회원정보 삭제
+    router.post('/del_user_data', api.del_user_data);
 
     return router;
 };

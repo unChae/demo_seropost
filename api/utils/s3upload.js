@@ -12,6 +12,7 @@ const s3 = new AWS.S3({
     region : 'ap-northeast-2'
 });
 let param = ''
+let date=''
 
 const storage = multerS3({
     s3: s3,
@@ -19,9 +20,15 @@ const storage = multerS3({
     contentType: multerS3.AUTO_CONTENT_TYPE, // 자동을 콘텐츠 타입 세팅
     acl: 'public-read', // 클라이언트에서 자유롭게 가용하기 위함
     key: (req, file, cb) => {
-        let date = moment().format('YYYYMMDDHHmmss');
+        if(file.fieldname=='po_photo'){
+            date = moment().format('YYYYMMDDHHmmss');}
         let {us_social_id, po_content} = req.body
-        param = us_social_id + '/post/' + date + '/' + file.fieldname + '.png'
+        if(file.fieldname=='po_record'){
+            param=us_social_id + '/post/' + date + '/' + file.fieldname + '.wav'
+        }
+        else{
+            param = us_social_id + '/post/' + date + '/' + file.fieldname + '.png'
+        }
         cb(null, param)
     },
 });
