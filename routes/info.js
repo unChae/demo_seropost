@@ -22,6 +22,9 @@ module.exports = (router) => {
 
     // 주소록 변경
     router.post('/update_address', api.update_address);
+
+    // Offline status 변경
+    router.post('/get_change_ofstatus', api.get_change_ofstatus);
     
 
     return router;

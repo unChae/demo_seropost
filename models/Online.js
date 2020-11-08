@@ -9,11 +9,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(100),
             allowNull: false
         },
-        on_received: {
-            type: DataTypes.INTEGER,
-            defaultValue: 0
-        }
     },{ 
+        updatedAt: false,
         timestamps:true
     }); 
     

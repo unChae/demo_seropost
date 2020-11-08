@@ -9,8 +9,10 @@ module.exports = async (req, res) => {
     let {us_social_id, po_content} = req.body;
     let po_photo = req.files.po_photo[0].location
     let po_content_photo = req.files.po_content_photo[0].location
-    let po_record = req.files.po_record[0].location
-    let date = moment().format('YYYYMMDDHHmmss');
+    let po_record = 'null'
+    if(req.files.po_record!=null){
+        po_record = req.files.po_record[0].location
+    }
     
     let post = await Post.create({
         raw : true,
@@ -18,8 +20,7 @@ module.exports = async (req, res) => {
         po_content,
         po_photo,
         po_content_photo,
-        po_record,
-        createAt : date
+        po_record
     })
     .catch((err) => {
         console.log("[set_post_data] DB 등록 실패");

@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         us_alarm: {
             type: DataTypes.INTEGER,
-            defaultValue: 0,
+            defaultValue: 1,//0 is off. 1 is on
             allowNull: false
         },
         us_access_token: {

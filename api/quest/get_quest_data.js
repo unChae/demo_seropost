@@ -41,6 +41,7 @@ module.exports = async (req,res) => {
             response(res, 200, "[get_quest_data] DB 반환 오류 발생", err);
         });
     }
+    // console.log(question)
     console.log('get_quest_data');
     response(res, 200, "[get_quest_data] DB 데이터 반환 완료", question);
     

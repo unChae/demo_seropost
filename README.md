@@ -180,11 +180,27 @@
     - User 테이블에 us_address_number 추가
     - Offline 테이블에 of_received(수신여부, def 0, of_address_number 추가, 수신한 날과 수신 수락한 날 테이블 수정
     - online, offline에 po_id 외래키 삭제, unique로 설정
-    - del)user_data : us_social_id와 관련된 db 전부 삭제
+    - del_user_data : us_social_id와 관련된 db 전부 삭제
+    - get_change_alarm : user의 alarm 데이터 변환
 
 - 해야 할 것들
     - 회원 탈퇴 기능
     - 문자 테스트
+    - 이미지 썸네일을 위한 resized image 출력 
+    - fcm 알람 보내기 기능 구현
+    - 문자대신 카카오로 주소입력
+    
+
+
+##### 2020.11. written by deok
+
+- 코드 수정
+    - get_online_data 삭제
+    - User가 사라지면 관련된 post online offline 전부삭제
+    - Post와 online offline 연동
+    
+- 해야 할 것들
+    - 문자 테스트, 세션 설정확인
     - 이미지 썸네일을 위한 resized image 출력 
     - fcm 알람 보내기 기능 구현
     - 문자대신 카카오로 주소입력

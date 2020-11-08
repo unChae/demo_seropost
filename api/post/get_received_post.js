@@ -1,6 +1,8 @@
 // models
 const model = require("../../models");
+const User = model.User;
 const Online = model.Online;
+const Offline = model.Offline;
 const Post = model.Post;
 
 // utils
@@ -16,19 +18,36 @@ module.exports = async (req, res) =>{
             order: [['createdAt','DESC']]
         })
         .catch((err) => {
-            console.log("[get_received_post] DB 반환 오류");
-            response(res, 200, "[get_received_post] DB 반환 오류", err);
+            console.log("[get_received_post] Online DB 반환 오류");
+            response(res, 200, "[get_received_post] Online DB 반환 오류", err);
         });
         
         for( var post of online_post){
             post.post = await Post.findOne({
-                raw : true,
-                where : { po_id: post.on_po_id }
+                where : { po_id: post.on_po_id },
+                include:[{
+                    model: User,
+                    attributes:['us_name', 'us_photo']
+                }]
             })
             .catch((err) => {
-                console.log("[get_received_post] DB 반환 오류");
-                response(res, 200, "[get_received_post] DB 반환 오류", err);
+                console.log("[get_received_post] Post DB 반환 오류");
+                response(res, 200, "[get_received_post] Post DB 반환 오류", err);
             });
+            
+            let offline = await Offline.findOne({
+                raw:true,
+                where : {of_po_id : post.on_po_id}
+            })
+            .catch((err) => {
+                console.log("[get_received_post] Offline DB 반환 오류");
+                response(res, 200, "[get_received_post] Offline DB 반환 오류", err);
+            })
+        
+            post.of_status = offline.of_status
+            post.of_name = offline.of_name
+            post.of_address = offline.of_address
+            post.of_address_detail = offline.of_address_detail
         }
         // console.log(online_post);    
         console.log('get_received_post');    

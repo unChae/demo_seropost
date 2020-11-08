@@ -16,12 +16,10 @@ var aligo_msg = {
     // testmode_yn	: 'Y'
 };
 
-
 module.exports = {
     set_us_phone_number: (us_phone_number) => {
         
         number = random.number(1000,9999);
-        
         aligo_msg.receiver = us_phone_number;
         aligo_msg.msg = String(number);
         console.log(aligo_msg);
@@ -49,4 +47,26 @@ module.exports = {
         
         return number;
     },
+    
+    send_address_sms:(us_phone_number)=>{
+        
+        aligo_msg.receiver = us_phone_number;
+        aligo_msg.msg = 'Please enter your address'
+        console.log(aligo_msg);
+        
+        axios.post('https://apis.aligo.in/send/', null, {
+            params : {
+                key : aligo_msg.key,
+                user_id : aligo_msg.user_id,
+                sender : aligo_msg.sender,
+                receiver : aligo_msg.receiver,
+                msg : aligo_msg.msg
+            }
+        }).catch((err) => {
+            console.log(err)
+            return false;
+        })
+        return true;
+        
+    }
 }

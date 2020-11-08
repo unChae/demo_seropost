@@ -16,6 +16,9 @@ module.exports = (router) => {
     
     // 보낸 Post, 받은 post 갯수 반환
     router.post('/get_post_count', api.get_post_count);
+    
+    // FCM 알림 전송
+    router.post('/send_post', api.send_post);
 
     return router;
 };
